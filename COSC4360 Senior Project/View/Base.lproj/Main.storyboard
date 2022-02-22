@@ -19,34 +19,50 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="main_background" translatesAutoresizingMaskIntoConstraints="NO" id="NXm-6M-Trr">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="😐" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="55O-Yk-NR4">
-                                <rect key="frame" x="141" y="218" width="108" height="120"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="100"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="How do people feel about..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="efX-gx-jmB">
-                                <rect key="frame" x="147" y="615" width="97" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9bT-Q7-k0T">
-                                <rect key="frame" x="162" y="732" width="67" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Button">
-                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </buttonConfiguration>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="55" translatesAutoresizingMaskIntoConstraints="NO" id="CHR-rq-OPf">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="😐" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="55O-Yk-NR4">
+                                        <rect key="frame" x="153" y="0.0" width="108" height="598"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="100"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="How do people feel about..." textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="efX-gx-jmB">
+                                        <rect key="frame" x="0.0" y="653" width="414" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="LC5-f4-KuJ"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9bT-Q7-k0T">
+                                        <rect key="frame" x="173.5" y="758" width="67" height="60"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="UQY-nX-x4z"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Button">
+                                            <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </buttonConfiguration>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="efX-gx-jmB" firstAttribute="leading" secondItem="CHR-rq-OPf" secondAttribute="leading" id="Ev8-yS-3rg"/>
+                                    <constraint firstAttribute="trailing" secondItem="efX-gx-jmB" secondAttribute="trailing" id="giM-eA-qdi"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="CHR-rq-OPf" secondAttribute="bottom" id="6cR-Xb-Oxc"/>
                             <constraint firstAttribute="bottom" secondItem="NXm-6M-Trr" secondAttribute="bottom" id="8yM-eY-FuL"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="CHR-rq-OPf" secondAttribute="trailing" id="9jW-UL-7Zc"/>
+                            <constraint firstItem="CHR-rq-OPf" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="JmY-dT-z7K"/>
                             <constraint firstAttribute="trailing" secondItem="NXm-6M-Trr" secondAttribute="trailing" id="L8S-UN-vj3"/>
                             <constraint firstItem="NXm-6M-Trr" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Osl-Zz-NzA"/>
+                            <constraint firstItem="CHR-rq-OPf" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="eK4-JR-uvg"/>
                             <constraint firstItem="NXm-6M-Trr" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="kJZ-hf-Kec"/>
                         </constraints>
                     </view>
