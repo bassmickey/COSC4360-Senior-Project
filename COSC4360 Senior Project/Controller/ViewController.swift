@@ -12,18 +12,15 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
         
-        let swifter = Swifter(consumerKey: "", consumerSecret: "")
+        let swifter = Swifter(consumerKey: "LdbnnfG6c90V2tLGCo19jK5pF", consumerSecret: "m7WUxVpFvmM3wrkxm7TJxtnkknwX61wL5XMWbadrE08HtcBHWo")
         
-        swifter.searchTweet(using: "@Apple") { results, searchMetadata in
+        swifter.searchTweet(using: "#AMZN", lang: "en", count: 100, tweetMode: .extended) { results, searchMetadata in
             print(results)
         } failure: { error in
             print("Failed the fetch data from Twitter API, \(error)")
         }
-
     }
-
 
 }
 
