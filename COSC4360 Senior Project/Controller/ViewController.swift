@@ -7,20 +7,42 @@
 
 import UIKit
 import SwifteriOS
+import CoreML
+import SwiftyJSON
 
 class ViewController: UIViewController {
-
+    let sentimentClassifer = TweetSentimentClassifer()
+    
+    let swifter = Swifter(consumerKey: "", consumerSecret: "")
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let swifter = Swifter(consumerKey: "LdbnnfG6c90V2tLGCo19jK5pF", consumerSecret: "m7WUxVpFvmM3wrkxm7TJxtnkknwX61wL5XMWbadrE08HtcBHWo")
-        
         swifter.searchTweet(using: "#AMZN", lang: "en", count: 100, tweetMode: .extended) { results, searchMetadata in
-            print(results)
+            
+            var tweets = [TweetSentimentClassiferInput]()
+            
+            for i in 0..<100 {
+                if let tweet = results[i]["full_text"].string {
+                    let tweetForClassification = TweetSentimentClassiferInput(text: tweet)
+                    tweets.append(tweetForClassification)
+                }
+            }
+            
+            do {
+                let predictions = try self.sentimentClassifer.predictions(inputs: tweets)
+                
+                for prediction in predictions {
+                    print(prediction.label)
+                }
+                
+            } catch {
+                print("There was an error with making a prediction \(error)")
+            }
+            
         } failure: { error in
             print("Failed the fetch data from Twitter API, \(error)")
         }
     }
-
 }
 

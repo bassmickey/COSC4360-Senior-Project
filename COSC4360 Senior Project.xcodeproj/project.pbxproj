@@ -16,6 +16,7 @@
 		1DAAE97027EA557A008D2FD3 /* TweetSentimentClassifer.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 1DAAE96A27EA557A008D2FD3 /* TweetSentimentClassifer.mlmodel */; };
 		1DBFB1F427CEAB630093421C /* SwifteriOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DBFB1EA27CEAB200093421C /* SwifteriOS.framework */; };
 		1DBFB1F527CEAB630093421C /* SwifteriOS.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1DBFB1EA27CEAB200093421C /* SwifteriOS.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		BE9F9BCD5B7370EFCDCC07F9 /* Pods_COSC4360_Senior_Project.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74CFBEAD4F1322F041C4E4D7 /* Pods_COSC4360_Senior_Project.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +82,9 @@
 		1D04C95027A0834700AEE73C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1DAAE96A27EA557A008D2FD3 /* TweetSentimentClassifer.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = TweetSentimentClassifer.mlmodel; sourceTree = "<group>"; };
 		1DBFB1E127CEAB200093421C /* Swifter.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Swifter.xcodeproj; path = ../../../Desktop/Swifter/Swifter.xcodeproj; sourceTree = "<group>"; };
+		61021A9F25643099EAF096DC /* Pods-COSC4360 Senior Project.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-COSC4360 Senior Project.release.xcconfig"; path = "Target Support Files/Pods-COSC4360 Senior Project/Pods-COSC4360 Senior Project.release.xcconfig"; sourceTree = "<group>"; };
+		74CFBEAD4F1322F041C4E4D7 /* Pods_COSC4360_Senior_Project.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_COSC4360_Senior_Project.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E61CDFF647791D3A14D49C23 /* Pods-COSC4360 Senior Project.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-COSC4360 Senior Project.debug.xcconfig"; path = "Target Support Files/Pods-COSC4360 Senior Project/Pods-COSC4360 Senior Project.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +93,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1DBFB1F427CEAB630093421C /* SwifteriOS.framework in Frameworks */,
+				BE9F9BCD5B7370EFCDCC07F9 /* Pods_COSC4360_Senior_Project.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -102,6 +107,7 @@
 				1D04C94127A0834000AEE73C /* COSC4360 Senior Project */,
 				1D04C94027A0834000AEE73C /* Products */,
 				1DBFB1F327CEAB630093421C /* Frameworks */,
+				25F8520C481F3FC91EED2134 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -167,8 +173,19 @@
 		1DBFB1F327CEAB630093421C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				74CFBEAD4F1322F041C4E4D7 /* Pods_COSC4360_Senior_Project.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		25F8520C481F3FC91EED2134 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E61CDFF647791D3A14D49C23 /* Pods-COSC4360 Senior Project.debug.xcconfig */,
+				61021A9F25643099EAF096DC /* Pods-COSC4360 Senior Project.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -178,10 +195,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1D04C95327A0834700AEE73C /* Build configuration list for PBXNativeTarget "COSC4360 Senior Project" */;
 			buildPhases = (
+				9ABD928160A06A38316ECEDB /* [CP] Check Pods Manifest.lock */,
 				1D04C93B27A0834000AEE73C /* Sources */,
 				1D04C93C27A0834000AEE73C /* Frameworks */,
 				1D04C93D27A0834000AEE73C /* Resources */,
 				1DBFB1F627CEAB630093421C /* Embed Frameworks */,
+				7AD183B5B93F2E6180497DEF /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -281,6 +300,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		7AD183B5B93F2E6180497DEF /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-COSC4360 Senior Project/Pods-COSC4360 Senior Project-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-COSC4360 Senior Project/Pods-COSC4360 Senior Project-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-COSC4360 Senior Project/Pods-COSC4360 Senior Project-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9ABD928160A06A38316ECEDB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-COSC4360 Senior Project-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		1D04C93B27A0834000AEE73C /* Sources */ = {
@@ -434,6 +495,7 @@
 		};
 		1D04C95427A0834700AEE73C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E61CDFF647791D3A14D49C23 /* Pods-COSC4360 Senior Project.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -462,6 +524,7 @@
 		};
 		1D04C95527A0834700AEE73C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 61021A9F25643099EAF096DC /* Pods-COSC4360 Senior Project.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
