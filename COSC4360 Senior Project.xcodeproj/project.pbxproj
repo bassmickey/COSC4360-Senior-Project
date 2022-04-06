@@ -13,6 +13,7 @@
 		1D04C94A27A0834000AEE73C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D04C94827A0834000AEE73C /* Main.storyboard */; };
 		1D04C94C27A0834700AEE73C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1D04C94B27A0834700AEE73C /* Assets.xcassets */; };
 		1D04C94F27A0834700AEE73C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D04C94D27A0834700AEE73C /* LaunchScreen.storyboard */; };
+		1D2D745B27FE27ED00DC2203 /* twitter-sanders-apple3.csv in Resources */ = {isa = PBXBuildFile; fileRef = 1D2D745A27FE27ED00DC2203 /* twitter-sanders-apple3.csv */; };
 		1DAAE97027EA557A008D2FD3 /* TweetSentimentClassifer.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 1DAAE96A27EA557A008D2FD3 /* TweetSentimentClassifer.mlmodel */; };
 		1DBFB1F427CEAB630093421C /* SwifteriOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DBFB1EA27CEAB200093421C /* SwifteriOS.framework */; };
 		1DBFB1F527CEAB630093421C /* SwifteriOS.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1DBFB1EA27CEAB200093421C /* SwifteriOS.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -80,6 +81,8 @@
 		1D04C94B27A0834700AEE73C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1D04C94E27A0834700AEE73C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1D04C95027A0834700AEE73C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1D2D745327FE248200DC2203 /* MLModel.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MLModel.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		1D2D745A27FE27ED00DC2203 /* twitter-sanders-apple3.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "twitter-sanders-apple3.csv"; sourceTree = "<group>"; };
 		1DAAE96A27EA557A008D2FD3 /* TweetSentimentClassifer.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = TweetSentimentClassifer.mlmodel; sourceTree = "<group>"; };
 		1DBFB1E127CEAB200093421C /* Swifter.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Swifter.xcodeproj; path = ../../../Desktop/Swifter/Swifter.xcodeproj; sourceTree = "<group>"; };
 		61021A9F25643099EAF096DC /* Pods-COSC4360 Senior Project.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-COSC4360 Senior Project.release.xcconfig"; path = "Target Support Files/Pods-COSC4360 Senior Project/Pods-COSC4360 Senior Project.release.xcconfig"; sourceTree = "<group>"; };
@@ -105,9 +108,10 @@
 			children = (
 				1DBFB1E127CEAB200093421C /* Swifter.xcodeproj */,
 				1D04C94127A0834000AEE73C /* COSC4360 Senior Project */,
-				1D04C94027A0834000AEE73C /* Products */,
 				1DBFB1F327CEAB630093421C /* Frameworks */,
 				25F8520C481F3FC91EED2134 /* Pods */,
+				1D04C94027A0834000AEE73C /* Products */,
+				1D2D745927FE27B700DC2203 /* Resources */,
 			);
 			sourceTree = "<group>";
 		};
@@ -122,7 +126,7 @@
 		1D04C94127A0834000AEE73C /* COSC4360 Senior Project */ = {
 			isa = PBXGroup;
 			children = (
-				1DAAE96A27EA557A008D2FD3 /* TweetSentimentClassifer.mlmodel */,
+				1D2D744C27FE23C200DC2203 /* Model */,
 				1D04C95727A0851900AEE73C /* View */,
 				1D04C95827A0852000AEE73C /* Controller */,
 				1D04C94227A0834000AEE73C /* AppDelegate.swift */,
@@ -148,6 +152,23 @@
 				1D04C94627A0834000AEE73C /* ViewController.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		1D2D744C27FE23C200DC2203 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1DAAE96A27EA557A008D2FD3 /* TweetSentimentClassifer.mlmodel */,
+				1D2D745327FE248200DC2203 /* MLModel.playground */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		1D2D745927FE27B700DC2203 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				1D2D745A27FE27ED00DC2203 /* twitter-sanders-apple3.csv */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		1DBFB1E227CEAB200093421C /* Products */ = {
@@ -286,6 +307,7 @@
 			files = (
 				1D04C94F27A0834700AEE73C /* LaunchScreen.storyboard in Resources */,
 				1D04C94C27A0834700AEE73C /* Assets.xcassets in Resources */,
+				1D2D745B27FE27ED00DC2203 /* twitter-sanders-apple3.csv in Resources */,
 				1D04C94A27A0834000AEE73C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

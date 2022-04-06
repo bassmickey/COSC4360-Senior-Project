@@ -22,7 +22,7 @@ class ViewController: UIViewController {
         }
     }()
     
-    let swifter = Swifter(consumerKey: "", consumerSecret: "")
+    let swifter = Swifter(consumerKey: "upEOuiZPrb9BxMmsjLz3phQEg", consumerSecret: "ccG5R8OAbEpCqbTaUAQbZJlY9tk07lKy48FyAdp7eAXUl58QJA")
     
     override func viewDidLoad() {
         super.viewDidLoad()
