@@ -123,28 +123,20 @@
 			isa = PBXGroup;
 			children = (
 				1DAAE96A27EA557A008D2FD3 /* TweetSentimentClassifer.mlmodel */,
-				1D04C95627A0850D00AEE73C /* Model */,
 				1D04C95727A0851900AEE73C /* View */,
 				1D04C95827A0852000AEE73C /* Controller */,
 				1D04C94227A0834000AEE73C /* AppDelegate.swift */,
 				1D04C94427A0834000AEE73C /* SceneDelegate.swift */,
 				1D04C94B27A0834700AEE73C /* Assets.xcassets */,
-				1D04C94D27A0834700AEE73C /* LaunchScreen.storyboard */,
 				1D04C95027A0834700AEE73C /* Info.plist */,
 			);
 			path = "COSC4360 Senior Project";
 			sourceTree = "<group>";
 		};
-		1D04C95627A0850D00AEE73C /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
 		1D04C95727A0851900AEE73C /* View */ = {
 			isa = PBXGroup;
 			children = (
+				1D04C94D27A0834700AEE73C /* LaunchScreen.storyboard */,
 				1D04C94827A0834000AEE73C /* Main.storyboard */,
 			);
 			path = View;
@@ -184,7 +176,6 @@
 				E61CDFF647791D3A14D49C23 /* Pods-COSC4360 Senior Project.debug.xcconfig */,
 				61021A9F25643099EAF096DC /* Pods-COSC4360 Senior Project.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};

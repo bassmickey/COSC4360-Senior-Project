@@ -46,6 +46,9 @@
                                         <state key="normal" title="Sense" backgroundImage="Rectange_pastel">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="sensePressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="UtS-CF-fls"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -67,6 +70,9 @@
                             <constraint firstItem="NXm-6M-Trr" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="kJZ-hf-Kec"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="textField" destination="efX-gx-jmB" id="y54-sL-Olv"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
