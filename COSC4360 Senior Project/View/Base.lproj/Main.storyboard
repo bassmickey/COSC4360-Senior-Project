@@ -56,6 +56,19 @@
                                     <constraint firstAttribute="trailing" secondItem="efX-gx-jmB" secondAttribute="trailing" id="giM-eA-qdi"/>
                                 </constraints>
                             </stackView>
+                            <view hidden="YES" alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hyy-2Z-dp5">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <subviews>
+                                    <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="QcM-DR-5VM">
+                                        <rect key="frame" x="188.5" y="429.5" width="37" height="37"/>
+                                    </activityIndicatorView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="QcM-DR-5VM" firstAttribute="centerY" secondItem="Hyy-2Z-dp5" secondAttribute="centerY" id="Bdl-rF-8lo"/>
+                                    <constraint firstItem="QcM-DR-5VM" firstAttribute="centerX" secondItem="Hyy-2Z-dp5" secondAttribute="centerX" id="Kmk-Io-BGF"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -65,13 +78,20 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="CHR-rq-OPf" secondAttribute="trailing" id="9jW-UL-7Zc"/>
                             <constraint firstItem="CHR-rq-OPf" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="JmY-dT-z7K"/>
                             <constraint firstAttribute="trailing" secondItem="NXm-6M-Trr" secondAttribute="trailing" id="L8S-UN-vj3"/>
+                            <constraint firstAttribute="bottom" secondItem="Hyy-2Z-dp5" secondAttribute="bottom" id="NxG-0A-PRe"/>
+                            <constraint firstItem="Hyy-2Z-dp5" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="O0S-V7-s2S"/>
                             <constraint firstItem="NXm-6M-Trr" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Osl-Zz-NzA"/>
+                            <constraint firstItem="Hyy-2Z-dp5" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="R3c-Br-ree"/>
                             <constraint firstItem="CHR-rq-OPf" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="eK4-JR-uvg"/>
                             <constraint firstItem="NXm-6M-Trr" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="kJZ-hf-Kec"/>
+                            <constraint firstAttribute="trailing" secondItem="Hyy-2Z-dp5" secondAttribute="trailing" id="pNG-eI-XLe"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="textField" destination="efX-gx-jmB" id="y54-sL-Olv"/>
+                        <outlet property="searchTextField" destination="efX-gx-jmB" id="y54-sL-Olv"/>
+                        <outlet property="sentimentLabel" destination="55O-Yk-NR4" id="TGj-Bw-CV3"/>
+                        <outlet property="spinner" destination="QcM-DR-5VM" id="6k4-m0-QK9"/>
+                        <outlet property="spinnerView" destination="Hyy-2Z-dp5" id="A0U-g3-jIc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

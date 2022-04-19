@@ -6,63 +6,91 @@
 //
 
 import UIKit
-import SwifteriOS
-import CoreML
-import SwiftyJSON
 
 class ViewController: UIViewController {
-    @IBOutlet weak var textField: UITextField!
+    @IBOutlet weak var searchTextField: UITextField!
+    @IBOutlet weak var sentimentLabel: UILabel!
+    @IBOutlet weak var spinnerView: UIView!
+    @IBOutlet weak var spinner: UIActivityIndicatorView!
     
-    let sentimentClassifier: TweetSentimentClassifer = {
-        do {
-            return try TweetSentimentClassifer(configuration: MLModelConfiguration())
-        } catch {
-            print(error)
-            fatalError()
-        }
-    }()
-    
-    let swifter = Swifter(consumerKey: "upEOuiZPrb9BxMmsjLz3phQEg", consumerSecret: "ccG5R8OAbEpCqbTaUAQbZJlY9tk07lKy48FyAdp7eAXUl58QJA")
+    var network = NetworkManager()
+    var classification = ClassificationLogic()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        searchTextField.delegate = self
+        
+        // keyboard listeners
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(with:)), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(with:)), name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
     }
     
-    @IBAction func sensePressed(_ sender: UIButton) {
-        if let searchText = textField.text {
-            swifter.searchTweet(using: searchText, lang: "en", count: 100, tweetMode: .extended) { results, searchMetadata in
-                
-                var tweets = [TweetSentimentClassiferInput]()
-                
-                for i in 0..<100 {
-                    if let tweet = results[i]["full_text"].string {
-                        let tweetForClassification = TweetSentimentClassiferInput(text: tweet)
-                        tweets.append(tweetForClassification)
-                    }
-                }
-                
-                do {
-                    let predictions = try self.sentimentClassifier.predictions(inputs: tweets)
-                    var sentimentScore = 0
-                    
-                    for prediction in predictions {
-                        let sentiment = prediction.label
-                        if sentiment == "Pos" {sentimentScore += 1}
-                        else if sentiment == "Neg" {sentimentScore -= 1}
-                    }
-                    
-                    print(sentimentScore)
-                    
-                } catch {
-                    print("There was an error with making a prediction \(error)")
-                }
-                
-            } failure: { error in
-                print("Failed the fetch data from Twitter API, \(error)")
-            }
+    deinit {
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
+    }
+    
+    @objc func updateUI() {
+        let tweets = network.getTweets()
+        classification.computeSentiment(with: tweets)
+        sentimentLabel.text = classification.getEmoji()
+        stopLoading()
+    }
+    
+    func startLoading() {
+        spinner.startAnimating()
+        spinnerView.isHidden = false
+    }
+    
+    func stopLoading() {
+        spinnerView.isHidden = true
+        spinner.stopAnimating()
+    }
+    
+    @objc func keyboardWillShow(with notification: Notification) {
+        if let keyboardFrame: NSValue = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
+            let keyboardRectangle = keyboardFrame.cgRectValue
+            let keyboardHeight = keyboardRectangle.height
+            
+            view.frame.origin.y = -keyboardHeight
         }
     }
+    
+    @objc func keyboardWillHide() {
+        view.frame.origin.y = 0
+    }
+}
 
+//MARK: -UITextfieldDelegate
+
+extension ViewController: UITextFieldDelegate {
+    @IBAction func sensePressed(_ sender: UIButton) {
+        searchTextField.endEditing(true)
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        searchTextField.endEditing(true)
+        return true
+    }
+    
+    func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
+        if textField.text != "" {
+            return true
+        } else {
+            textField.placeholder = "How do people feel about..."
+            return false
+        }
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        if let searchText = searchTextField.text {
+            startLoading()
+            network.fetchTweets(with: searchText)
+            Timer.scheduledTimer(timeInterval: 1.3, target: self, selector: #selector(updateUI), userInfo: nil, repeats: false)
+        }
+    }
 }
 

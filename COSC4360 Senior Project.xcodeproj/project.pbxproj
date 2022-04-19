@@ -14,6 +14,8 @@
 		1D04C94C27A0834700AEE73C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1D04C94B27A0834700AEE73C /* Assets.xcassets */; };
 		1D04C94F27A0834700AEE73C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D04C94D27A0834700AEE73C /* LaunchScreen.storyboard */; };
 		1D2D745B27FE27ED00DC2203 /* twitter-sanders-apple3.csv in Resources */ = {isa = PBXBuildFile; fileRef = 1D2D745A27FE27ED00DC2203 /* twitter-sanders-apple3.csv */; };
+		1D6D5E21280F2F3C00F96FD1 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6D5E20280F2F3C00F96FD1 /* NetworkManager.swift */; };
+		1D6D5E28280F32C100F96FD1 /* ClassificationLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6D5E27280F32C100F96FD1 /* ClassificationLogic.swift */; };
 		1DAAE97027EA557A008D2FD3 /* TweetSentimentClassifer.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 1DAAE96A27EA557A008D2FD3 /* TweetSentimentClassifer.mlmodel */; };
 		1DBFB1F427CEAB630093421C /* SwifteriOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DBFB1EA27CEAB200093421C /* SwifteriOS.framework */; };
 		1DBFB1F527CEAB630093421C /* SwifteriOS.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1DBFB1EA27CEAB200093421C /* SwifteriOS.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -83,6 +85,8 @@
 		1D04C95027A0834700AEE73C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1D2D745327FE248200DC2203 /* MLModel.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MLModel.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		1D2D745A27FE27ED00DC2203 /* twitter-sanders-apple3.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "twitter-sanders-apple3.csv"; sourceTree = "<group>"; };
+		1D6D5E20280F2F3C00F96FD1 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		1D6D5E27280F32C100F96FD1 /* ClassificationLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassificationLogic.swift; sourceTree = "<group>"; };
 		1DAAE96A27EA557A008D2FD3 /* TweetSentimentClassifer.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = TweetSentimentClassifer.mlmodel; sourceTree = "<group>"; };
 		1DBFB1E127CEAB200093421C /* Swifter.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Swifter.xcodeproj; path = ../../../Desktop/Swifter/Swifter.xcodeproj; sourceTree = "<group>"; };
 		61021A9F25643099EAF096DC /* Pods-COSC4360 Senior Project.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-COSC4360 Senior Project.release.xcconfig"; path = "Target Support Files/Pods-COSC4360 Senior Project/Pods-COSC4360 Senior Project.release.xcconfig"; sourceTree = "<group>"; };
@@ -159,6 +163,8 @@
 			children = (
 				1DAAE96A27EA557A008D2FD3 /* TweetSentimentClassifer.mlmodel */,
 				1D2D745327FE248200DC2203 /* MLModel.playground */,
+				1D6D5E20280F2F3C00F96FD1 /* NetworkManager.swift */,
+				1D6D5E27280F32C100F96FD1 /* ClassificationLogic.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -361,8 +367,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1D6D5E28280F32C100F96FD1 /* ClassificationLogic.swift in Sources */,
 				1D04C94727A0834000AEE73C /* ViewController.swift in Sources */,
 				1D04C94327A0834000AEE73C /* AppDelegate.swift in Sources */,
+				1D6D5E21280F2F3C00F96FD1 /* NetworkManager.swift in Sources */,
 				1D04C94527A0834000AEE73C /* SceneDelegate.swift in Sources */,
 				1DAAE97027EA557A008D2FD3 /* TweetSentimentClassifer.mlmodel in Sources */,
 			);
